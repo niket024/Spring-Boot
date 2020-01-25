@@ -1,0 +1,3 @@
+The link to import the collection of URLs into Postman:
+
+https://gitlab.com/videolearning/bugtracker-jpa/raw/master/Bugtracker-JPA.postman_collection.json

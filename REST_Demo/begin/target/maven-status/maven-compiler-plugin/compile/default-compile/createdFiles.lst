@@ -1,0 +1,8 @@
+com\keysoft\bucktrackerjpa\controller\TrackzillaController.class
+com\keysoft\bucktrackerjpa\config\WebConfiguration.class
+com\keysoft\bucktrackerjpa\dao\IApplicationDAO.class
+com\keysoft\bucktrackerjpa\service\ApplicationService.class
+com\keysoft\bucktrackerjpa\BucktrackerJpaApplication.class
+com\keysoft\bucktrackerjpa\dao\ApplicationDAO.class
+com\keysoft\bucktrackerjpa\entity\Application.class
+com\keysoft\bucktrackerjpa\service\IApplicationService.class

@@ -1,0 +1,17 @@
+ApplicationRunner
+-------------------
+When you want to execute some piece of code exactly before the application startup completes, you can use it then.
+
+CrudRepository
+--------------
+Spring Boot Data enables JPA repository support by default.
+ CrudRepository provides generic CRUD operation on a repository for a specific type. 
+ CrudRepository is a Spring data interface and to use it we need to create our interface by extending CrudRepository. 
+ Spring provides CrudRepository implementation class automatically at runtime. It contains methods such as save, findById, delete, count etc. 
+ Spring boot automatically detects our repository 
+ if the package of that repository interface is the same or sub-package of the class annotated with @SpringBootApplication.
+ 
+ H2 Databse will be accessible by
+----------------------------
+JDBC URL : jdbc:h2:mem:testdb
+http://localhost:8090/h2-console/

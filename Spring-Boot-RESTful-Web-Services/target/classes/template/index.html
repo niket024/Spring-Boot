@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Spring Boot + JPA + Datatables</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+<script
+	src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+	<h1>Employees Table</h1>
+	<table id="employeesTable" class="display table">
+
+		<!-- Header Table -->
+		<thead>
+			<tr>
+				<td><input id="empId" type="text" placeholder="Id"></td>
+				<td><input id="empName" type="text" placeholder="Name"></td>
+				<td><input id="lName" type="text" placeholder="Last Name"></td>
+				<td><input id="email" type="text" placeholder="Email"></td>
+				<td><input id="phone" type="text" placeholder="Phone"></td>
+				<td><input id="active" type="text" placeholder="Active"></td>
+			</tr>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Active</th>
+			</tr>
+		</thead>
+
+	</table>
+</body>
+</html>

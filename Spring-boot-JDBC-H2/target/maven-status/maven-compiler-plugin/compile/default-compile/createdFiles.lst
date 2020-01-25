@@ -1,0 +1,5 @@
+com\nik\DataInit.class
+com\nik\SpringBootWebApplication.class
+com\nik\PersonDAO.class
+com\nik\WelcomeController.class
+com\nik\Person.class

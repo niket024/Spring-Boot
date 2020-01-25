@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "e998b5eb-8984-4906-ab15-f40ff75c9764",
+		"name": "Springboot-mongodb-crud-operations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create employees",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"id\": 1,\n    \"name\": \"Tori Carless\",\n    \"designation\": \"Administrator\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Leticia Mariotte\",\n    \"designation\": \"Developer\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Adriano Waldocke\",\n    \"designation\": \"Manager\"\n  },\n  {\n    \"id\": 4,\n    \"name\": \"Morena Roughey\",\n    \"designation\": \"Administrator\"\n  },\n  {\n    \"id\": 5,\n    \"name\": \"Ingeberg Creer\",\n    \"designation\": \"Sr. Developer\"\n  }\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8102/api/mongo/emp/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"mongo",
+						"emp",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8102/api/mongo/emp/getall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"mongo",
+						"emp",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get employee by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8102/api/mongo/emp/getbyid/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"mongo",
+						"emp",
+						"getbyid",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete employee by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8102/api/mongo/emp/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"mongo",
+						"emp",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete all employees",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8102/api/mongo/emp/deleteall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"mongo",
+						"emp",
+						"deleteall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update employee by id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sara Scofield\",\n    \"designation\": \"Sr. Technical Lead\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8102/api/mongo/emp/update/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"mongo",
+						"emp",
+						"update",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
