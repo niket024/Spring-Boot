@@ -1,6 +1,7 @@
 package com.nik.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,8 +24,9 @@ public class KafkaController {
 		return "welcome";
 	}
 
-	@PostMapping(value = "/publish")
-	public void sendMessageToKafkaTopic(@RequestParam("message") String message) {
+	@GetMapping(value = "/publish")
+	public String sendMessageToKafkaTopic(@RequestParam("message") String message) {
 		this.producer.sendMessage(message);
+		return "Message sent successfully!!!";
 	}
 }
