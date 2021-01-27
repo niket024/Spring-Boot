@@ -5,4 +5,6 @@ com\nik\UserDaoImp.class
 com\nik\UserService.class
 com\nik\User.class
 com\nik\UserServiceImp.class
+com\nik\config\Swagger2UiConfiguration.class
+com\nik\config\WebMvcConfig.class
 com\nik\UserController.class

@@ -18,6 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.SwaggerDefinition;
+import io.swagger.annotations.Tag;
+
+@SwaggerDefinition(tags = { @Tag(name = "Demo", description = "Demo for Swagger") })
 @RestController
 @RequestMapping(value = { "/user" })
 public class UserController {
@@ -42,16 +47,15 @@ public class UserController {
 	}
 
 	@PostMapping(value = "/create", headers = "Accept=application/json")
-	public ResponseEntity<Void> createUser(@RequestBody User user,
-			UriComponentsBuilder ucBuilder) {
+	public ResponseEntity<Void> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
 		System.out.println("Creating User " + user.getName());
 		userService.createUser(user);
 		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(ucBuilder.path("/user/{id}")
-				.buildAndExpand(user.getId()).toUri());
+		headers.setLocation(ucBuilder.path("/user/{id}").buildAndExpand(user.getId()).toUri());
 		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
 
+	@ApiOperation(value = "Get all users")
 	@GetMapping(value = "/get", headers = "Accept=application/json")
 	public List<User> getAllUser() {
 		List<User> tasks = userService.getUser();
@@ -81,8 +85,7 @@ public class UserController {
 	}
 
 	@PatchMapping(value = "/{id}", headers = "Accept=application/json")
-	public ResponseEntity<User> updateUserPartially(@PathVariable("id") int id,
-			@RequestBody User currentUser) {
+	public ResponseEntity<User> updateUserPartially(@PathVariable("id") int id, @RequestBody User currentUser) {
 		User user = userService.findById(id);
 		if (user == null) {
 			return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
