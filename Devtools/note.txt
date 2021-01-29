@@ -11,6 +11,7 @@ We can implement the DevTools in our project by adding the following dependency 
 	<artifactId>spring-boot-devtools</artifactId>  
 	<scope>runtime<scope >  
 </dependency>  
+
 The spring-boot-devtools module includes an embedded LiveReload server 
 
 By default, live reload is enabled. 

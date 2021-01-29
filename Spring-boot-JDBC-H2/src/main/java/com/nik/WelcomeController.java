@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,7 +27,6 @@ public class WelcomeController {
 	@SuppressWarnings("unchecked")
 	@RequestMapping("/")
 	public ModelAndView welcome(Map<String, Object> model) {
-		System.out.println(personDAO.findByFullNameLike("John"));
 		ModelAndView mav = new ModelAndView("welcome");
 		mav.addObject("message", "I am from H2 database");
 		Iterable<Person> all = personDAO.findAll();
@@ -94,12 +92,8 @@ public class WelcomeController {
 	public ModelAndView create(@ModelAttribute Person person,
 			BindingResult result, Map<String, Object> map)
 			throws ParseException {
-		System.out.println(person.getFullName() + "nfjkgnhbjkfdgbjk");
-		System.out.println(person.getDateOfBirth() + "nfjkgnhbjkfdgbjk");
-		/*
-		 * Date d1 = df.parse(person.getDateOfBirth().toString());
-		 * person.setDateOfBirth(d1);
-		 */
+		System.out.println(person.getFullName());
+		System.out.println(person.getDateOfBirth());
 		personDAO.save(person);
 		ModelAndView mav = new ModelAndView("welcome");
 		mav.addObject("message", "I am from H2 database");
