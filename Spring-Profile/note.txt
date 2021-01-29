@@ -1,0 +1,19 @@
+What Is A Profile?
+------------------------
+When we create an application, we need to deploy it in different kinds of environments,
+such as development, QA, staging and production.
+
+The application configuration in each of these environments will be different.
+
+One of the approaches to handling application configuration is to create something called a profile.
+Spring Boot has the concept of a profile built in.
+
+Spring Boot Profiles
+---------------------
+You can define default configuration in application.properties. 
+Environment specific overrides can be configured in specific files:
+eg.
+application-dev.properties
+application-test.properties
+application-stage.properties
+application-prod.properties
