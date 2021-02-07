@@ -33,7 +33,13 @@ public class Swagger2DemoRestController {
 	@ApiOperation(value = "Get students by name")
 	@RequestMapping(value = "/getStudent/{name}")
 	public Student getStudent(@PathVariable(value = "name") String name) {
-		return students.stream().filter(x -> x.getName().equalsIgnoreCase(name)).collect(Collectors.toList()).get(0);
+		List<Student> students = new ArrayList<>();
+		students = students.stream().filter(x -> x.getName().equalsIgnoreCase(name)).collect(Collectors.toList());
+		if (students.size() > 0) {
+			return students.get(0);
+		} else {
+			return new Student();
+		}
 	}
 
 	@ApiOperation(value = "Get students by country")
@@ -45,6 +51,7 @@ public class Swagger2DemoRestController {
 		System.out.println(studentsByCountry);
 		return studentsByCountry;
 	}
+
 	@ApiOperation(value = "Get students by class")
 	@RequestMapping(value = "/getStudentByClass/{cls}")
 	public List<Student> getStudentByClass(@PathVariable(value = "cls") String cls) {

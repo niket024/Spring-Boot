@@ -12,6 +12,7 @@ you need to add the following dependencies in our build configurations file.
    <artifactId>springfox-swagger2</artifactId>
    <version>2.7.0</version>
 </dependency>
+
 <dependency>
    <groupId>io.springfox</groupId>
    <artifactId>springfox-swagger-ui</artifactId>

@@ -6,6 +6,10 @@ public class Student {
 	private String cls;
 	private String country;
 
+	public Student() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Student(String name, String cls, String country) {
 		super();
 		this.name = name;

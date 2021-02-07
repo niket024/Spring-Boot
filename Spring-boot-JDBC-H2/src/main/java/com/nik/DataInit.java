@@ -30,6 +30,7 @@ public class DataInit implements ApplicationRunner {
 
 			personDAO.save(p1);
 			personDAO.save(p2);
+			System.out.println("Two records inserted");
 		}
 
 	}
