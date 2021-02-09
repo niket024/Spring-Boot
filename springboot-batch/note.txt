@@ -1,0 +1,23 @@
+Spring Boot Batch
+-------------------
+Consider an environment where users have to do a lot of batch processing. 
+This will be quite different from a typical web application which has to work 24/7. 
+But in classic environments it's not unusual to do the heavy lifting for example during the 
+night when there are no regular users using your system. Batch processing includes typical tasks 
+like reading and writing to files, transforming data, reading from or writing to databases, 
+create reports, import and export data and things like that. 
+
+Often these steps have to be chained together or you have to create more complex workflows 
+where you have to define which job steps can be run in parallel or have to be run sequentially etc. 
+That's where a framework like Spring Batch can be very handy.
+
+Spring Boot Batch provides reusable functions that are essential in processing large volumes of 
+records, including logging/tracing, transaction management, job processing statistics, job restart, 
+skip, and resource management. It also provides more advanced technical services and features that 
+will enable extremely high-volume and high performance batch jobs though optimization and partitioning 
+techniques.
+
+Simple as well as complex, high-volume batch jobs can leverage the framework in a 
+highly scalable manner to process significant volumes of information.
+
+ref: https://www.javainuse.com/spring/bootbatch
