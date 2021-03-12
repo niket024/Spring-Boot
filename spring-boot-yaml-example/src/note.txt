@@ -1,0 +1,38 @@
+Spring Boot Application Configuration with YAML
+-----------------------------------------------
+YAML (YAML Ain't Markup Language) is a human-readable data serialization language. 
+"It is commonly used for configuration files, 
+but could be used in many applications where data is being stored
+
+Advantages of YAML
+---------------------
+Files are easy to work in a text editor
+Files are portable between programming languages
+Files are expressive and also extensible
+Files support the Unicode character set
+
+Comparision
+---------------
+
+application.properties
+
+level1.property1 = 5
+level1.property2 = 6
+level1.property3 = 7
+level1.level2.property4 = 8
+level1.level2.property5 = 10
+level1.level2.property6 = 11
+
+level1:
+  property1: 5
+  property2: 6
+  property3: 7
+  level2:
+     property4: 8
+     property5: 10
+     property6: 11
+     
+YAML
+
+is concise
+is more readable
