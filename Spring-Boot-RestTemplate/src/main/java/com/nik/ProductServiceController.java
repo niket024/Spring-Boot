@@ -1,12 +1,20 @@
 package com.nik;
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
+
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +34,11 @@ public class ProductServiceController {
 		HttpEntity<String> entity = new HttpEntity<String>(headers);
 
 		return restTemplate.exchange("http://localhost:8090/products", HttpMethod.GET, entity, String.class).getBody();
+	}
+	
+	@RequestMapping(value = "/template/publicuri")
+	public ResponseEntity<String> getPublicApi() {
+		return new ResponseEntity<String>(getPublicApiCall(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/template/products", method = RequestMethod.POST)
@@ -55,5 +68,19 @@ public class ProductServiceController {
 
 		return restTemplate.exchange("http://localhost:8090/products/" + id, HttpMethod.DELETE, entity, String.class)
 				.getBody();
+	}
+	
+	public String getPublicApiCall() {
+		final String uri = "https://reqres.in/api/users?page=2";
+		// If you are accessing https url then you need to add following code to
+		// RestTemplate
+		CloseableHttpClient httpClient = HttpClients.custom()
+				.setSSLHostnameVerifier(new NoopHostnameVerifier()).build();
+		HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
+		requestFactory.setHttpClient(httpClient);
+		RestTemplate restTemplate = new RestTemplate(requestFactory);
+		String response = restTemplate.getForObject(uri, String.class);
+		System.out.println(response);
+		return response;
 	}
 }

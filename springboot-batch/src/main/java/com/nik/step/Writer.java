@@ -1,4 +1,4 @@
-package com.javainuse.step;
+package com.nik.step;
 
 import java.util.List;
 

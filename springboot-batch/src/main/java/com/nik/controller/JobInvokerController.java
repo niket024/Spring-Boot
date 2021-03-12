@@ -1,4 +1,4 @@
-package com.javainuse.controller;
+package com.nik.controller;
  
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;

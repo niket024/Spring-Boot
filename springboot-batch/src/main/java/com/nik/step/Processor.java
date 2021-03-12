@@ -1,4 +1,4 @@
-package com.javainuse.step;
+package com.nik.step;
 
 import org.springframework.batch.item.ItemProcessor;
 

@@ -1,4 +1,4 @@
-package com.javainuse.config;
+package com.nik.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecutionListener;
@@ -10,10 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.javainuse.listener.JobCompletionListener;
-import com.javainuse.step.Processor;
-import com.javainuse.step.Reader;
-import com.javainuse.step.Writer;
+import com.nik.listener.JobCompletionListener;
+import com.nik.step.Processor;
+import com.nik.step.Reader;
+import com.nik.step.Writer;
 
 @Configuration
 public class BatchConfig {

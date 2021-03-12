@@ -53,6 +53,7 @@ public class ProductServiceController {
 	}
 
 	@GetMapping(value = "/products")
+	//@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public ResponseEntity<Object> getProduct() {
 		return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
 	}

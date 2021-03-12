@@ -12,9 +12,14 @@ public class ProductServiceInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-
-		System.out.println("Pre Handle method is Calling");
-		return true;
+		if (request.getMethod().equalsIgnoreCase("GET")) {
+			System.out.println("Method name=" + request.getMethod());
+			System.out.println("Pre Handle method is Calling");
+			return true;
+		} else {
+			System.out.println("We didnt found the the method type GET");
+			return false;
+		}
 	}
 
 	@Override
