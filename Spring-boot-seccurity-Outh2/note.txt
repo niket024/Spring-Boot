@@ -1,0 +1,66 @@
+link for setup
+------------
+https://docs.google.com/document/d/1Aa6QZA-xm1Jbq7XkTsomJ2G_qjA8TEC-VcahMIsXKXk/edit
+
+
+OAuth 2.0
+---------
+OAuth2.0 is an open authorization protocol, which allows accessing the resources of the 
+resource owner by enabling the client applications on HTTP services such as Facebook, GitHub, etc. 
+It allows sharing of resources stored on one site to another site without using their credentials. 
+It uses username and password tokens instead.
+
+Why Use OAuth 2.0?
+-------------------
+You can use OAuth 2.0 to read data of a user from another application.
+
+It supplies the authorization workflow for web, desktop applications, and mobile devices.
+
+It is a server side web app that uses authorization code and does not interact with user credentials.
+
+Features of OAuth 2.0
+----------------------
+OAuth 2.0 is a simple protocol that allows to access resources of the user without sharing passwords.
+
+It provides user agent flows for running clients application using a scripting language, such as JavaScript. 
+Typically, a browser is a user agent.
+
+It accesses the data using tokens instead of using their credentials and stores data in online 
+file system of the user such as Google Docs or Dropbox account.
+
+Advantages of OAuth 2.0
+------------------------
+OAuth 2.0 is a very flexible protocol that relies on SSL (Secure Sockets Layer that ensures data between the 
+web server and browsers remain private) to save user access token.
+
+OAuth 2.0 relies on SSL which is used to ensure cryptography industry protocols and are being used to keep the data safe.
+
+It allows limited access to the user's data and allows accessing when authorization tokens expire.
+
+It has ability to share data for users without having to release personal information.
+
+It is easier to implement and provides stronger authentication.
+
+Flow:
+----
+https://docs.google.com/document/d/1Aa6QZA-xm1Jbq7XkTsomJ2G_qjA8TEC-VcahMIsXKXk/edit
+
+Step 1 − First, the user accesses resources using the client application such as Google, Facebook, Twitter, etc.
+
+Step 2 − Next, the client application will be provided with the client id and client password during 
+registering the redirect URI (Uniform Resource Identifier).
+
+Step 3 − The user logs in using the authenticating application. The client ID and client password is 
+unique to the client application on the authorization server.
+
+Step 4 − The authenticating server redirects the user to a redirect Uniform Resource Identifier (URI) using authorization code.
+
+Step 5 − The user accesses the page located at redirect URI in the client application.
+
+Step 6 − The client application will be provided with the authentication code, client id and client password, 
+and send them to the authorization server.
+
+Step 7 − The authenticating application returns an access token to the client application.
+
+Step 8 − Once the client application gets an access token, the user starts accessing the resources of the 
+resource owner using the client application.
