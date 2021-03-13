@@ -64,3 +64,15 @@ Step 7 − The authenticating application returns an access token to the client 
 
 Step 8 − Once the client application gets an access token, the user starts accessing the resources of the 
 resource owner using the client application.
+
+for facebook
+------------------
+	  clientId: xxxxxxxxxxx
+      clientSecret: xxxxxxxxxxxx
+      accessTokenUri: https://graph.facebook.com/oauth/access_token
+      userAuthorizationUri: https://www.facebook.com/dialog/oauth
+      tokenName: oauth_token
+      authenticationScheme: query
+      clientAuthenticationScheme: form 
+    resource:
+      userInfoUri: https://graph.facebook.com/me

@@ -5,12 +5,12 @@ server:
 security:
   oauth2:
     client:
-      clientId: xxxxxxxxxxx
-      clientSecret: xxxxxxxxxxxx
-      accessTokenUri: https://graph.facebook.com/oauth/access_token
-      userAuthorizationUri: https://www.facebook.com/dialog/oauth
+      clientId: XXXXXX
+      clientSecret: XXXXXXX
+      accessTokenUri:  https://www.googleapis.com/oauth2/v3/token
+      userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
       tokenName: oauth_token
       authenticationScheme: query
       clientAuthenticationScheme: form 
     resource:
-      userInfoUri: https://graph.facebook.com/me
+      userInfoUri: https://www.googleapis.com/userinfo/v2/me
