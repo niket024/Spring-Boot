@@ -25,7 +25,6 @@ public class User implements Serializable {
 
 	@Column(name = "country")
 	private String country;
-	@Column(name = "name")
 	private String name;
 
 	public int getId() {

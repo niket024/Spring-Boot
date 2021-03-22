@@ -27,18 +27,15 @@ public class ProductServiceController {
 	}
 
 	@RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Object> updateProduct(@PathVariable("id") String id,
-			@RequestBody Product product) {
+	public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
 		if (!productRepo.containsKey(id))
 			throw new ProductNotfoundException();
 		productRepo.remove(id);
 		product.setId(id);
 		productRepo.put(id, product);
-		return new ResponseEntity<>("Product is updated successfully",
-				HttpStatus.OK);
+		return new ResponseEntity<>("Product is updated successfully", HttpStatus.OK);
 	}
-	
-	
+
 	@RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Object> getProduct(@PathVariable("id") String id) {
 		if (!productRepo.containsKey(id))

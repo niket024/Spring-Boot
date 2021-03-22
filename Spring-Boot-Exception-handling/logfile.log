@@ -616,3 +616,63 @@ Verify the connector's configuration, identify and stop any process that's liste
 2021-02-12 07:59:51.406  INFO 24572 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
 2021-02-12 07:59:51.407  INFO 24572 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 2021-02-12 07:59:51.426  INFO 24572 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+2021-03-20 12:03:32.372  INFO 20068 --- [main] com.nik.DemoApplication                  : Starting DemoApplication on NIKU-BLR-02 with PID 20068 (C:\Niket\Git\Spring-Boot\Spring-Boot-Exception-handling\target\classes started by niket.kumar in C:\Niket\Git\Spring-Boot\Spring-Boot-Exception-handling)
+2021-03-20 12:03:32.376  INFO 20068 --- [main] com.nik.DemoApplication                  : No active profile set, falling back to default profiles: default
+2021-03-20 12:03:32.458  INFO 20068 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a28ffa4: startup date [Sat Mar 20 12:03:32 IST 2021]; root of context hierarchy
+2021-03-20 12:03:35.138  INFO 20068 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2021-03-20 12:03:35.169  INFO 20068 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2021-03-20 12:03:35.173  INFO 20068 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.6
+2021-03-20 12:03:35.739  INFO 20068 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-03-20 12:03:35.748  INFO 20068 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-20 12:03:35.748  INFO 20068 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3295 ms
+2021-03-20 12:03:36.014  INFO 20068 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2021-03-20 12:03:36.019  INFO 20068 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-03-20 12:03:36.019  INFO 20068 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-03-20 12:03:36.020  INFO 20068 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-03-20 12:03:36.020  INFO 20068 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2021-03-20 12:03:36.485  INFO 20068 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a28ffa4: startup date [Sat Mar 20 12:03:32 IST 2021]; root of context hierarchy
+2021-03-20 12:03:36.585  INFO 20068 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.nik.ProductServiceController.getProduct(java.lang.String)
+2021-03-20 12:03:36.586  INFO 20068 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.nik.ProductServiceController.updateProduct(java.lang.String,com.nik.Product)
+2021-03-20 12:03:36.587  INFO 20068 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.nik.ProductServiceController.getProducts()
+2021-03-20 12:03:36.593  INFO 20068 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-03-20 12:03:36.594  INFO 20068 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-20 12:03:36.640  INFO 20068 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-20 12:03:36.640  INFO 20068 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-20 12:03:36.670  INFO 20068 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in productExceptionController
+2021-03-20 12:03:36.727  INFO 20068 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-20 12:03:37.017  INFO 20068 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-03-20 12:03:37.141  INFO 20068 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2021-03-20 12:03:37.149  INFO 20068 --- [main] com.nik.DemoApplication                  : Started DemoApplication in 5.321 seconds (JVM running for 5.714)
+2021-03-20 12:04:07.433  INFO 20068 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2021-03-20 12:04:07.433  INFO 20068 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2021-03-20 12:04:07.454  INFO 20068 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2021-03-20 12:05:43.133  INFO 18156 --- [main] com.nik.DemoApplication                  : Starting DemoApplication on NIKU-BLR-02 with PID 18156 (C:\Niket\Git\Spring-Boot\Spring-Boot-Exception-handling\target\classes started by niket.kumar in C:\Niket\Git\Spring-Boot\Spring-Boot-Exception-handling)
+2021-03-20 12:05:43.138  INFO 18156 --- [main] com.nik.DemoApplication                  : No active profile set, falling back to default profiles: default
+2021-03-20 12:05:43.215  INFO 18156 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a28ffa4: startup date [Sat Mar 20 12:05:43 IST 2021]; root of context hierarchy
+2021-03-20 12:05:46.163  INFO 18156 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2021-03-20 12:05:46.178  INFO 18156 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2021-03-20 12:05:46.179  INFO 18156 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.6
+2021-03-20 12:05:46.978  INFO 18156 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-03-20 12:05:46.995  INFO 18156 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-20 12:05:46.996  INFO 18156 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3785 ms
+2021-03-20 12:05:47.511  INFO 18156 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2021-03-20 12:05:47.521  INFO 18156 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-03-20 12:05:47.526  INFO 18156 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-03-20 12:05:47.527  INFO 18156 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-03-20 12:05:47.528  INFO 18156 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2021-03-20 12:05:47.982  INFO 18156 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a28ffa4: startup date [Sat Mar 20 12:05:43 IST 2021]; root of context hierarchy
+2021-03-20 12:05:48.077  INFO 18156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.nik.ProductServiceController.updateProduct(java.lang.String,com.nik.Product)
+2021-03-20 12:05:48.078  INFO 18156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.nik.ProductServiceController.getProduct(java.lang.String)
+2021-03-20 12:05:48.079  INFO 18156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.nik.ProductServiceController.getProducts()
+2021-03-20 12:05:48.084  INFO 18156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-03-20 12:05:48.086  INFO 18156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-03-20 12:05:48.139  INFO 18156 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-20 12:05:48.139  INFO 18156 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-20 12:05:48.167  INFO 18156 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in productExceptionController
+2021-03-20 12:05:48.204  INFO 18156 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-03-20 12:05:48.446  INFO 18156 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-03-20 12:05:48.566  INFO 18156 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2021-03-20 12:05:48.578  INFO 18156 --- [main] com.nik.DemoApplication                  : Started DemoApplication in 6.07 seconds (JVM running for 6.546)
+2021-03-20 12:05:57.666  INFO 18156 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2021-03-20 12:05:57.667  INFO 18156 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2021-03-20 12:05:57.703  INFO 18156 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 36 ms
