@@ -1,0 +1,35 @@
+HATEOAS
+---------
+Hypermedia as the Engine of Application State (HATEOAS) 
+is a component of the REST application architecture that 
+distinguishes it from other network application architectures. 
+With HATEOAS, a client interacts with a network 
+application whose application servers provide information dynamically through hypermedia.
+
+Generally speaking, the principle implies that the API should guide 
+the client through the application by returning relevant information about the next potential steps, 
+along with each response.
+
+dependencies
+-------------
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-hateoas</artifactId>
+    <version>2.1.4.RELEASE</version>
+</dependency>
+
+Add HATEOAS Links to REST resources
+-----------------------------------
+Step 1:
+-------
+Extend resource models with ResourceSupport class
+Extend all model classes where you want to add HATEOAS links – 
+with org.springframework.hateoas.ResourceSupport class.
+
+Step 2:
+-------
+Build and add links in REST controller
+To add links, you will need ControllerLinkBuilder and Link classes. 
+Link is the final representation of link to be added in REST resource. 
+Whereas ControllerLinkBuilder 
+helps in building the links using it’s various method based on builder pattern.

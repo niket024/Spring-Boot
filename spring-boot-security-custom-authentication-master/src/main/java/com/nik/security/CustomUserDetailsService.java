@@ -13,12 +13,12 @@ public class CustomUserDetailsService implements UserDetailsService {
 	private static List<User> dummyUsers = new ArrayList<>();
 
 	public CustomUserDetailsService() {
-		// if you dont want to use any encoder then uncomment the bellow two lines
-		// dummyUsers.add(new User("john", "{noop}secret", "USER"));
-		// dummyUsers.add(new User("admin", "{noop}supersecret", "ADMIN"));
+		 //if you dont want to use any encoder then uncomment the bellow two lines
+		 dummyUsers.add(new User("john", "{noop}secret", "USER"));
+		 dummyUsers.add(new User("admin", "{noop}supersecret", "ADMIN"));
 		// if you want use the default encoder
-		dummyUsers.add(new User("john", "secret", "USER"));
-		dummyUsers.add(new User("admin", "supersecret", "ADMIN"));
+		//dummyUsers.add(new User("john", "secret", "USER"));
+		//dummyUsers.add(new User("admin", "supersecret", "ADMIN"));
 	}
 
 	@Override
@@ -35,13 +35,12 @@ public class CustomUserDetailsService implements UserDetailsService {
 	private UserDetails mapUserDetails(User user) {
 
 		// uncomment if there is no encoder
-		/*
-		 * return
-		 * org.springframework.security.core.userdetails.User.withUsername(user.getName(
-		 * )) .password(user.getPassword()) .roles(user.getRole()).build();
-		 */
-		return org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder().username(user.getName())
+
+		return org.springframework.security.core.userdetails.User.withUsername(user.getName())
 				.password(user.getPassword()).roles(user.getRole()).build();
+
+//		return org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder().username(user.getName())
+//				.password(user.getPassword()).roles(user.getRole()).build();
 
 	}
 }
