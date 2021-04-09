@@ -1,0 +1,81 @@
+Elasticsearch 
+-------------
+Elasticsearch is a real-time distributed and open source full-text search and analytics engine. 
+It is used in Single Page Application (SPA) projects. 
+Elasticsearch is an open source developed in Java and used by many big organizations around the world. 
+It is licensed under the Apache license version 2.0.
+
+General Features
+----------------
+The general features of Elasticsearch are as follows −
+
+Elasticsearch is scalable up to petabytes of structured and unstructured data.
+
+Elasticsearch can be used as a replacement of document stores like MongoDB and RavenDB.
+
+Elasticsearch uses denormalization to improve the search performance.
+
+Elasticsearch is one of the popular enterprise search engines, and is currently being used by many big organizations like Wikipedia, The Guardian, StackOverflow, GitHub etc.
+
+Elasticsearch is an open source and available under the Apache license version 2.0.
+
+Key Concepts
+-----------
+The key concepts of Elasticsearch are as follows −
+
+Node
+-----
+It refers to a single running instance of Elasticsearch. 
+Single physical and virtual server accommodates multiple 
+nodes depending upon the capabilities of their physical resources like RAM, storage and processing power.
+
+Cluster
+------
+It is a collection of one or more nodes. 
+Cluster provides collective indexing and search capabilities across all the nodes for entire data.
+
+Index
+-------
+It is a collection of different type of documents and their properties. 
+Index also uses the concept of shards to improve the performance. 
+For example, a set of document contains data of a social networking application.
+
+Document
+------------
+It is a collection of fields in a specific manner defined in JSON format. 
+Every document belongs to a type and resides inside an index. 
+Every document is associated with a unique identifier called the UID.
+
+Shard
+------
+Indexes are horizontally subdivided into shards. 
+This means each shard contains all the properties of document but contains less number of 
+JSON objects than index. 
+The horizontal separation makes shard an independent node, which can be store in any node. 
+Primary shard is the original horizontal part of an index and then these primary shards are 
+replicated into replica shards.
+
+Replicas
+---------
+Elasticsearch allows a user to create replicas of their indexes and shards. 
+Replication not only helps in increasing the availability of data in case of failure, 
+but also improves the performance of searching by carrying out a parallel 
+search operation in these replicas.
+
+Advantages
+------------
+Elasticsearch is developed on Java, which makes it compatible on almost every platform.
+
+Elasticsearch is real time, in other words after one second the added document is 
+searchable in this engine
+
+Elasticsearch is distributed, which makes it easy to scale and integrate in any big organization.
+
+Creating full backups are easy by using the concept of gateway, which is present in Elasticsearch.
+
+Handling multi-tenancy is very easy in Elasticsearch when compared to Apache Solr.
+
+Elasticsearch uses JSON objects as responses, which makes it possible to invoke 
+the Elasticsearch server with a large number of different programming languages.
+
+Elasticsearch supports almost every document type except those that do not support text rendering.
