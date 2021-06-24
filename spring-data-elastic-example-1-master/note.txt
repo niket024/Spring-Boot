@@ -15,7 +15,8 @@ Elasticsearch can be used as a replacement of document stores like MongoDB and R
 
 Elasticsearch uses denormalization to improve the search performance.
 
-Elasticsearch is one of the popular enterprise search engines, and is currently being used by many big organizations like Wikipedia, The Guardian, StackOverflow, GitHub etc.
+Elasticsearch is one of the popular enterprise search engines, and is currently being used by many big organizations like Wikipedia, 
+The Guardian, StackOverflow, GitHub etc.
 
 Elasticsearch is an open source and available under the Apache license version 2.0.
 

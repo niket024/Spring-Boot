@@ -18,3 +18,7 @@ you need to add the following dependencies in our build configurations file.
    <artifactId>springfox-swagger-ui</artifactId>
    <version>2.7.0</version>
 </dependency>
+
+To access the Swagger Ui doc
+-------------------------
+http://localhost:8090/v2/api-docs

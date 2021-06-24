@@ -4,13 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.SwaggerDefinition;
 import io.swagger.annotations.Tag;
+import io.swagger.util.Json;
+import io.swagger.util.Yaml;
 
 @SwaggerDefinition(tags = { @Tag(name = "Demo", description = "Demo for Swagger") })
 @RestController
@@ -56,5 +62,20 @@ public class Swagger2DemoRestController {
 	@RequestMapping(value = "/getStudentByClass/{cls}")
 	public List<Student> getStudentByClass(@PathVariable(value = "cls") String cls) {
 		return students.stream().filter(x -> x.getCls().equalsIgnoreCase(cls)).collect(Collectors.toList());
+	}
+
+	@GetMapping(value = "/getYaml")
+	public String getYaml() {
+
+		String finalResult = "";
+		final String URI = "http://localhost:8090/v2/api-docs";
+		RestTemplate restTemplate = new RestTemplate();
+		String result = restTemplate.getForObject(URI, String.class);
+		try {
+			finalResult = Yaml.pretty().writeValueAsString(result);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		return finalResult;
 	}
 }
