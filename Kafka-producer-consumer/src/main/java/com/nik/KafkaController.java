@@ -28,7 +28,7 @@ public final class KafkaController {
 
 	@GetMapping(value = "/get")
 	public String receiveMessageFromKafkaTopic() {
-		consumerService.getMsg();
+		//consumerService.getMsg();
 		return "Msg received successfully";
 	}
 }

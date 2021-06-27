@@ -22,5 +22,4 @@ public class KafkaProducerConsumerApplication implements ApplicationRunner {
 		producerService.sendMessage("I am sending at starting of application");
 
 	}
-
 }
