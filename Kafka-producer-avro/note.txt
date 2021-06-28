@@ -1,0 +1,4 @@
+follow the bellow link for quick start:
+https://kafka.apache.org/quickstart
+
+ref: https://codenotfound.com/spring-kafka-apache-avro-serializer-deserializer-example.html
