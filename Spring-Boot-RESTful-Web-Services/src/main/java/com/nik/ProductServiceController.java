@@ -32,32 +32,27 @@ public class ProductServiceController {
 	@RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Object> delete(@PathVariable("id") String id) {
 		productRepo.remove(id);
-		return new ResponseEntity<>("Product is deleted successsfully",
-				HttpStatus.OK);
+		return new ResponseEntity<>("Product is deleted successsfully", HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Object> updateProduct(@PathVariable("id") String id,
-			@RequestBody Product product) {
+	public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
 		product.setId(id);
 		productRepo.put(id, product);
-		return new ResponseEntity<>("Product is updated successsfully",
-				HttpStatus.OK);
+		return new ResponseEntity<>("Product is updated successsfully", HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/products", method = RequestMethod.POST)
 	public ResponseEntity<Object> createProduct(@RequestBody Product product) {
 		productRepo.put(product.getId(), product);
-		return new ResponseEntity<>("Product is created successfully",
-				HttpStatus.CREATED);
+		return new ResponseEntity<>("Product is created successfully", HttpStatus.CREATED);
 	}
 
 	@GetMapping(value = "/products")
-	//@RequestMapping(value = "/products", method = RequestMethod.GET)
-	public ResponseEntity<Object> getProduct() {
+	public ResponseEntity<Object> getProducts() {
 		return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Object> getProduct(@PathVariable("id") String id) {
 		return new ResponseEntity<>(productRepo.get(id), HttpStatus.OK);

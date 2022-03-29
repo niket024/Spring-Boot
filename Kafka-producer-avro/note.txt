@@ -1,4 +1,21 @@
 follow the bellow link for quick start:
 https://kafka.apache.org/quickstart
 
-ref: https://codenotfound.com/spring-kafka-apache-avro-serializer-deserializer-example.html
+ref: 
+
+https://codenotfound.com/spring-kafka-apache-avro-serializer-deserializer-example.html
+https://medium.com/@mailshine/apache-avro-quick-example-in-kafka-7b2909396c02
+
+if using confluent schema then use the following properties in producerconfig
+----------
+props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
+          io.confluent.kafka.serializers.KafkaAvroSerializer.class);
+props.put("schema.registry.url", "http://localhost:8081");
+
+in consumer config
+------------
+props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "io.confluent.kafka.serializers.KafkaAvroDeserializer");
+props.put("schema.registry.url", "http://localhost:8081");
+
+ref:
+https://docs.confluent.io/platform/current/schema-registry/serdes-develop/serdes-avro.html

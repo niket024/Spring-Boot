@@ -77,6 +77,7 @@ public class ProductServiceController {
 		HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 		requestFactory.setHttpClient(httpClient);
 		RestTemplate restTemplate = new RestTemplate(requestFactory);
+	
 		String response = restTemplate.getForObject(uri, String.class);
 		System.out.println(response);
 		return response;

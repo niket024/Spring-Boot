@@ -1,14 +1,23 @@
 package com.nik;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
@@ -40,7 +49,7 @@ public class Swagger2DemoRestController {
 	@RequestMapping(value = "/getStudent/{name}")
 	public Student getStudent(@PathVariable(value = "name") String name) {
 		List<Student> students = new ArrayList<>();
-		students = students.stream().filter(x -> x.getName().equalsIgnoreCase(name)).collect(Collectors.toList());
+		students = this.students.stream().filter(x -> x.getName().equalsIgnoreCase(name)).collect(Collectors.toList());
 		if (students.size() > 0) {
 			return students.get(0);
 		} else {
@@ -78,4 +87,18 @@ public class Swagger2DemoRestController {
 		}
 		return finalResult;
 	}
+
+	@RequestMapping(value = "import", method = RequestMethod.POST, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
+	public ResponseEntity uploadZipFile(@RequestPart MultipartFile file, 
+			@RequestParam(value = "test") String test, @RequestParam(value = "name") String name)
+			throws IllegalStateException, IOException {
+		System.out.println("File name = " + file.getOriginalFilename());
+		System.out.println("data = " + test);
+		System.out.println("name = " + name);
+		File file2 = new File("C:\\Niket");
+		File newFile = new File(file2.getAbsoluteFile() + File.separator + file.getOriginalFilename());
+		file.transferTo(newFile);
+		return new ResponseEntity<>("FIle uploade successfully", HttpStatus.OK);
+	}
+
 }

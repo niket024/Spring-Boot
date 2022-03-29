@@ -21,6 +21,6 @@ public class Receiver {
 	@KafkaListener(topics = "${kafka.topic.avro}")
 	public void receive(User user) {
 		LOGGER.info("received user='{}'", user.toString());
-		latch.countDown();
+		//latch.countDown();
 	}
 }

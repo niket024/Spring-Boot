@@ -21,8 +21,8 @@ public class KafkaProducerConsumerApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		User user = User.newBuilder().setName("John Doe").setFavoriteColor("green")
-		        .setFavoriteNumber(null).build();
+		User user = User.newBuilder().setName("John Doe john").setFavoriteColor("green")
+		        .setFavoriteNumber(45).build();
 		producerService.send(user);
 	}
 

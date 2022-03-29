@@ -15,3 +15,15 @@ Spring Boot Data enables JPA repository support by default.
 ----------------------------
 JDBC URL : jdbc:h2:mem:testdb
 http://localhost:8090/h2-console/
+
+Note: 
+for all properties follow
+
+https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+TO access H2
+---------------------
+Brows :http://localhost:8090/h2-console/
+JDBC URL:	jdbc:h2:mem:testdb
+User Name:	sa
+Password:	

@@ -29,7 +29,7 @@ public class ProductServiceController {
 	@RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
 		if (!productRepo.containsKey(id))
-			throw new ProductNotfoundException();
+			throw new ProductNotfoundException("There is no such product");
 		productRepo.remove(id);
 		product.setId(id);
 		productRepo.put(id, product);
@@ -39,7 +39,7 @@ public class ProductServiceController {
 	@RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Object> getProduct(@PathVariable("id") String id) {
 		if (!productRepo.containsKey(id))
-			throw new ProductNotfoundException();
+			throw new ProductNotfoundException("There is no such product");
 		return new ResponseEntity<>(productRepo.get(id), HttpStatus.OK);
 	}
 

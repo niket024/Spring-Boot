@@ -23,29 +23,4 @@ public class Welcome {
 		return "hello to all";
 	}
 
-	@RequestMapping("/json")
-	public ResponseEntity<Object> getJsonData(Map<String, Object> model) {
-		JSONParser jsonParser = new JSONParser(getPublicApi());
-		LinkedHashMap<?, ?> hashMap = null;
-		try {
-			hashMap = (LinkedHashMap<?, ?>) jsonParser.parse();
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		return new ResponseEntity<>(hashMap, HttpStatus.OK);
-	}
-
-	public String getPublicApi() {
-		final String uri = "https://reqres.in/api/users?page=2";
-		// If you are accessing https url then you need to add following code to
-		// RestTemplate
-		CloseableHttpClient httpClient = HttpClients.custom().setSSLHostnameVerifier(new NoopHostnameVerifier())
-				.build();
-		HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
-		requestFactory.setHttpClient(httpClient);
-		RestTemplate restTemplate = new RestTemplate(requestFactory);
-		String response = restTemplate.getForObject(uri, String.class);
-		System.out.println(response);
-		return response;
-	}
 }

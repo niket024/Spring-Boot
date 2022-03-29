@@ -1,0 +1,7 @@
+Steps:
+1. Download Erland from here: https://www.erlang.org/patches/otp-23.3.4.12
+2. Set the ERLANG_HOME= installation directory
+3. Dowanload rabbitmq zip from here: https://www.rabbitmq.com/install-windows-manual.html#downloads
+4. goto rabbitmq->sbin and open cmd
+5. run rabbitmq-server.bat
+6. run the spring boot application

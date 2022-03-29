@@ -9,7 +9,7 @@ We can implement the DevTools in our project by adding the following dependency 
 <dependency>  
 	<groupId>org.springframework.boot</groupId>  
 	<artifactId>spring-boot-devtools</artifactId>  
-	<scope>runtime<scope >  
+	<scope>runtime</scope>  
 </dependency>  
 
 The spring-boot-devtools module includes an embedded LiveReload server 
@@ -19,6 +19,7 @@ If you wish to disable this feature for some reason, then set spring.
 devtools.livereload.enabled property to false.
 
 application.properties
-spring.devtools.livereload.enabled  = false #Set false to disable live reload
+for disabling the devtool
+spring.devtools.restart.enabled = false
 
 Ref:https://howtodoinjava.com/spring-boot/developer-tools-module-tutorial/
