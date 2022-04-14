@@ -1,0 +1,70 @@
+JUnit 5 Architecture
+----------------------
+As compared to JUnit 4, JUnit 5 is composed of several different modules 
+from three different sub-projects:
+
+JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage
+
+JUnit Platform
+---------------
+To be able to launch junit tests, IDEs, build tools or plugins need 
+to include and extend platform APIs. It defines the TestEngine 
+API for developing new testing frameworks that runs on the platform.
+It also provides a Console Launcher to launch the platform from the 
+command line and build plugins for Gradle and Maven.
+
+JUnit Jupiter
+-------------
+It includes new programming and extension models for writing tests. 
+It has all new junit annotations and TestEngine implementation to run tests 
+written with these annotations.
+
+JUnit Vintage
+--------------
+It primary purpose is to support running JUnit 3 and JUnit 4 
+written tests on the JUnit 5 platform. It’s there are backward compatibility.
+
+JUnit 5 offers following annotations to write tests.
+
+Annotation	Description
+----------  ------------
+@BeforeEach	The annotated method will be run before each test method in the test class.
+@AfterEach	The annotated method will be run after each test method in the test class.
+@BeforeAll	The annotated method will be run before all test methods in the test class. This method must be static.
+@AfterAll	The annotated method will be run after all test methods in the test class. This method must be static.
+@Test	It is used to mark a method as junit test
+@DisplayName	Used to provide any custom display name for a test class or test method
+@Disable	It is used to disable or ignore a test class or method from test suite.
+@Nested	Used to create nested test classes
+@Tag	Mark test methods or test classes with tags for test discovering and filtering
+@TestFactory	Mark a method is a test factory for dynamic tests
+
+Mockito
+-------
+Mockito is a mocking framework. It is a Java-based library used to create 
+simple and basic test APIs for performing unit testing of Java applications. 
+It can also be used with other frameworks such as JUnit and TestNG.
+
+Mocking is a process of developing the objects that act as the mock or clone of the real objects. 
+In other words, mocking is a testing technique 
+mock objects are used instead of real objects for testing purposes.
+
+Need for mocking
+--------------------
+Before using the Mocking technique, we should know the reasons for using mocking, 
+which are as follows:
+
+If we want to test a component that depends on the other component, but it is under development. 
+It generally uses when working in a team and parts are divided between several team-mates. 
+In this case, mocking plays an essential role in the testing of that component. Without mocking, 
+we need to wait for the completion of the required elements for testing.
+
+If the real components perform slow operations while dealing with database connections or 
+another complex read/ write operation. Sometimes the database queries can take 10, 20, 
+or more seconds to execute. In such cases, we require mock objects to perform testing, 
+and it can be done via mocking.
+
+If there is an infrastructure concern that makes the testing impossible. 
+It is very similar to the first case. For example, when we create a connection to the database, 
+some issues related to configurations occur. 
+It requires mocking for creating mock components to provide unit testing.

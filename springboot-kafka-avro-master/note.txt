@@ -1,0 +1,15 @@
+first of all follow this video
+https://www.youtube.com/watch?v=mdcIdzYHFlw
+
+follow these steps:
+
+https://docs.confluent.io/platform/current/quickstart/ce-quickstart.html
+
+Also follow the
+-------------------
+https://www.confluent.io/blog/schema-registry-avro-in-spring-boot-application-tutorial/
+
+How to Run Apache Kafka on Windows
+---------------------------------
+https://www.confluent.io/blog/set-up-and-run-kafka-on-windows-linux-wsl-2/
+https://docs.microsoft.com/en-us/windows/wsl/install-win10
