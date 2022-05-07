@@ -1,0 +1,34 @@
+Note: Before running this run Employee-Data-Service
+hit http://localhost:8081/testAsynch
+
+What is future?
+-------------------
+A Java Future, java.util.concurrent.Future, represents the result of an asynchronous computation. 
+When the asynchronous task is created, a Java Future object is returned. 
+This Future object functions as a handle to the result of the asynchronous task. 
+Once the asynchronous task completes, 
+the result can be accessed via the Future object returned when the task was started
+
+Limitations of the Future
+--------------------------
+A Future cannot be mutually complete.
+We cannot perform further action on a Future's result without blocking.
+Future has not any exception handling.
+We cannot combine multiple futures.
+
+What is CompletableFuture?
+-------------------------
+A CompltableFuture is used for asynchronous programming. 
+Asynchronous programming means writing non-blocking code. 
+It runs a task on a separate thread than the main application thread 
+and notifies the main thread about its progress, completion or failure.
+
+In this way, the main thread does not block or wait for the completion of the task. 
+Other tasks execute in parallel. Parallelism improves the performance of the program.
+
+A CompletableFuture is a class in Java. It belongs to java.util.cocurrent package. 
+It implements CompletionStage and Future interface.
+
+@Async
+----------
+Annotation that marks a method as a candidate for asynchronous execution. 

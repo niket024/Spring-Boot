@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+//UserDetailsService is a Core interface which loads user-specific data. 
 
 public class CustomUserDetailsService implements UserDetailsService {
 

@@ -12,35 +12,35 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
+//Indicates a class can process a specific Authentication implementation.
 public class CustomAuthenticationProvider implements AuthenticationProvider {
-    List<User> dummyUsers = new ArrayList<>();
+	List<User> dummyUsers = new ArrayList<>();
 
-    public CustomAuthenticationProvider() {
-        dummyUsers.add(new User("john", "secret", "ROLE_USER"));
-        dummyUsers.add(new User("admin", "supersecret", "ROLE_ADMIN"));
-    }
+	public CustomAuthenticationProvider() {
+		dummyUsers.add(new User("john", "secret", "ROLE_USER"));
+		dummyUsers.add(new User("admin", "supersecret", "ROLE_ADMIN"));
+	}
 
-    @Override
-    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        String name = authentication.getName();
-        String password = authentication.getCredentials().toString();
+	@Override
+	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+		String name = authentication.getName();
+		String password = authentication.getCredentials().toString();
 
-        Optional<User> authenticatedUser = dummyUsers.stream().filter(
-                user -> user.getName().equals(name) && user.getPassword().equals(password)
-        ).findFirst();
+		Optional<User> authenticatedUser = dummyUsers.stream()
+				.filter(user -> user.getName().equals(name) && user.getPassword().equals(password)).findFirst();
 
-        if(!authenticatedUser.isPresent()){
-            throw new BadCredentialsException("Some Text");
-        }
+		if (!authenticatedUser.isPresent()) {
+			throw new BadCredentialsException("Some Text");
+		}
 
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority(authenticatedUser.get().getRole()));
-        Authentication auth = new UsernamePasswordAuthenticationToken(name, password, authorities);
-        return auth;
-    }
+		List<GrantedAuthority> authorities = new ArrayList<>();
+		authorities.add(new SimpleGrantedAuthority(authenticatedUser.get().getRole()));
+		Authentication auth = new UsernamePasswordAuthenticationToken(name, password, authorities);
+		return auth;
+	}
 
-    @Override
-    public boolean supports(Class<?> aClass) {
-        return aClass.equals(UsernamePasswordAuthenticationToken.class);
-    }
+	@Override
+	public boolean supports(Class<?> aClass) {
+		return aClass.equals(UsernamePasswordAuthenticationToken.class);
+	}
 }
