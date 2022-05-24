@@ -17,6 +17,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		 //if you dont want to use any encoder then uncomment the bellow two lines
 		 dummyUsers.add(new User("john", "{noop}secret", "USER"));
 		 dummyUsers.add(new User("admin", "{noop}supersecret", "ADMIN"));
+		 dummyUsers.add(new User("admin", "{noop}supersecret", "USER"));
 		// if you want use the default encoder
 		//dummyUsers.add(new User("john", "secret", "USER"));
 		//dummyUsers.add(new User("admin", "supersecret", "ADMIN"));

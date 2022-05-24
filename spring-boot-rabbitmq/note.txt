@@ -4,7 +4,10 @@ Steps:
 3. Dowanload rabbitmq zip from here: https://www.rabbitmq.com/install-windows-manual.html#downloads
 4. goto rabbitmq->sbin and open cmd
 5. run rabbitmq-server.bat
-6. run the spring boot application
+6. To get the rabbitmq studio run rabbitmq-plugins.bat enable rabbitmq_management
+   To access the UI type localhost:15672 in browser
+   Default username and password is guest
+7. run the spring boot application
 
 Introduction:
 RabbitMQ is a message broker: it accepts and forwards messages. 

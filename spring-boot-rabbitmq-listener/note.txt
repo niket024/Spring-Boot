@@ -1,0 +1,46 @@
+Steps:
+1. Download Erland from here: https://www.erlang.org/patches/otp-23.3.4.12
+2. Set the ERLANG_HOME= installation directory
+3. Dowanload rabbitmq zip from here: https://www.rabbitmq.com/install-windows-manual.html#downloads
+4. goto rabbitmq->sbin and open cmd
+5. run rabbitmq-server.bat
+6. To get the rabbitmq studio run rabbitmq-plugins.bat enable rabbitmq_management
+   To access the UI type localhost:15672 in browser
+   Default username and password is guest
+7. run the spring boot application
+8. goto rabbimq UI->queues->nik.queue (Same in properties file)-> 
+publish message->payload-> hello world-> click on publish message
+Note: You can also run SpringBootRabbitMQHelloWorld for publishing the messages
+
+Introduction:
+RabbitMQ is a message broker: it accepts and forwards messages. 
+You can think about it as a post office: when you put the mail that you want posting in a post box, 
+you can be sure that the letter carrier will eventually deliver the mail to your recipient. 
+In this analogy, RabbitMQ is a post box, a post office, and a letter carrier.
+
+The major difference between RabbitMQ and the post office is that it doesn't deal with paper, 
+instead it accepts, stores, and forwards binary blobs of data ‒ messages.
+
+RabbitMQ, and messaging in general, uses some jargon.
+
+1. Producing: means nothing more than sending. A program that sends messages is a producer
+2. Queue: A queue is the name for a post box which lives inside RabbitMQ. 
+Although messages flow through RabbitMQ and your applications, 
+they can only be stored inside a queue. A queue is only bound by the host's memory & disk limits, 
+it's essentially a large message buffer. Many producers can send messages that go to one queue, 
+and many consumers can try to receive data from one queue. 
+This is how we represent a queue:
+3.Consuming: has a similar meaning to receiving. A consumer is a program that mostly waits to receive messages:
+4. Topic exchange: Lets say if we want send msg to a particular queue which is having certain key and some other key holding
+msg should go in other queue. then use the topc exchange
+
+eg. We created three bindings: Q1 is bound with binding key "*.orange.*" and Q2 with "*.*.rabbit" and "lazy.#".
+
+These bindings can be summarised as:
+
+Q1 is interested in all the orange animals.
+Q2 wants to hear everything about rabbits, and everything about lazy animals.
+
+(https://www.rabbitmq.com/tutorials/tutorial-five-python.html)
+
+ref: https://www.rabbitmq.com/tutorials/tutorial-one-java.html
