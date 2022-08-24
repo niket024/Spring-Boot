@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.nik.error.ErrorModel;
+
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.SwaggerDefinition;
 import io.swagger.annotations.Tag;
@@ -30,13 +32,18 @@ public class UserController {
 	UserService userService;
 
 	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<User> getUserById(@PathVariable("id") int id) {
-		System.out.println("Fetching User with id " + id);
-		User user = userService.findById(id);
-		if (user == null) {
-			return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+	public ResponseEntity<?> getUserById(@PathVariable("id") int id) {
+		try {
+			System.out.println("Fetching User with id " + id);
+			User user = userService.findById(id);
+			if (user == null) {
+				return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+			}
+			return new ResponseEntity<User>(user, HttpStatus.OK);
+		} catch (Exception e) {
+			ErrorModel errorModel = new ErrorModel(e.getMessage(), "Failed", HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity(errorModel, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/name={name}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -47,13 +54,11 @@ public class UserController {
 	}
 
 	@PostMapping(value = "/create", headers = "Accept=application/json")
-	public ResponseEntity<Void> createUser(@RequestBody User user,
-			UriComponentsBuilder ucBuilder) {
+	public ResponseEntity<Void> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
 		System.out.println("Creating User " + user.getName());
 		userService.createUser(user);
 		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(ucBuilder.path("/user/{id}")
-				.buildAndExpand(user.getId()).toUri());
+		headers.setLocation(ucBuilder.path("/user/{id}").buildAndExpand(user.getId()).toUri());
 		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
 
@@ -87,8 +92,7 @@ public class UserController {
 	}
 
 	@PatchMapping(value = "/{id}", headers = "Accept=application/json")
-	public ResponseEntity<User> updateUserPartially(@PathVariable("id") int id,
-			@RequestBody User currentUser) {
+	public ResponseEntity<User> updateUserPartially(@PathVariable("id") int id, @RequestBody User currentUser) {
 		User user = userService.findById(id);
 		if (user == null) {
 			return new ResponseEntity<User>(HttpStatus.NOT_FOUND);

@@ -1,0 +1,32 @@
+Steps:
+1. download and install casandra following the below page
+https://phoenixnap.com/kb/install-cassandra-on-windows
+2. open the cmd from cassandra-installation/bin and run
+cassandra (it will start the server)
+3. open the cmd from cassandra-installation/bin and run
+cqlsh (it will start the cassandra command line to run any query)
+4. Create database and table following the below commands
+    a. create keyspace bezkoder with replication={'class':'SimpleStrategy', 'replication_factor':1};
+    b. use bezkoder;
+    c. CREATE TABLE tutorial(
+       id timeuuid PRIMARY KEY,
+       title text,
+       description text,
+       published boolean
+    );
+    d. CREATE CUSTOM INDEX idx_title ON bezkoder.tutorial (title)
+    USING 'org.apache.cassandra.index.sasi.SASIIndex'
+    WITH OPTIONS = {
+    'mode': 'CONTAINS',
+    'analyzer_class': 'org.apache.cassandra.index.sasi.analyzer.NonTokenizingAnalyzer',
+    'case_sensitive': 'false'};
+
+post call:
+http://localhost:8080/api/tutorials
+body
+{
+    "title": "javainuse",
+    "description": "Java in use"
+}
+
+ref: https://www.bezkoder.com/spring-boot-cassandra-crud/

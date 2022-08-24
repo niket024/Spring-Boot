@@ -8,6 +8,7 @@ Steps:
    To access the UI type localhost:15672 in browser
    Default username and password is guest
 7. run the spring boot application
+hit http://localhost:8080/javainuse-rabbitmq/producer?empName=emp1&empId=emp001
 
 Note: To consume the message you can run spring-boot-rabbitmq-listener
 

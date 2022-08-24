@@ -42,4 +42,7 @@ respose : Hello world!
 For decoding the jwt token visit https://jwt.io/ (scroll down)
 ref: https://www.javainuse.com/spring/boot-jwt	
 
+Recomendation: 
+https://www.toptal.com/spring/spring-security-tutorial
+https://www.toptal.com/java/rest-security-with-jwt-spring-security-and-java
 	     
