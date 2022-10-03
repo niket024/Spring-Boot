@@ -2,3 +2,13 @@ follow the bellow link for quick start:
 https://kafka.apache.org/quickstart
 
 ref: https://docs.spring.io/spring-kafka/reference/html/
+
+Steps before running this application:
+Download kafka from https://archive.apache.org/dist/kafka/3.2.1/kafka_2.13-3.2.1.tgz
+1.zookeeper-server-start.bat ../../config/zookeeper.properties
+2.kafka-server-start.bat ../../config/server.properties
+
+if facing :
+Error while fetching metadata with correlation id 92 : {myTest=UNKNOWN_TOPIC_OR_PARTITION}
+then run bellow command 
+C:\Niket\software\kafka_2.13-3.2.1\bin\windows>kafka-topics.bat --create --topic kafkaTopic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 4

@@ -10,8 +10,11 @@ public class ProfileController {
 	@Value("${app.message}")
 	private String welcomeMessage;
 	
+	@Value("${app.common}")
+	private String common;
+	
 	@GetMapping("/welcome")
 	public String getDataBaseConnectionDetails() {
-		return welcomeMessage;
+		return welcomeMessage + common;
 	}
 }

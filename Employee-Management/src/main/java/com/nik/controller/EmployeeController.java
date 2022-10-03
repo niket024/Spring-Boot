@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.nik.modal.Employee;
 import com.nik.service.EmployeeService;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping({ "/employees" })
 public class EmployeeController {
@@ -31,6 +33,11 @@ public class EmployeeController {
 		return employeeService.getAllEmployees();
 	}
 
+	@GetMapping(path = { "/name/{name}" })
+	public List<Employee> findByPlaceContaining(@PathVariable("name") String name) {
+		return employeeService.findByPlaceContaining(name);
+	}
+
 	@DeleteMapping(path = { "/{id}" })
 	public Employee delete(@PathVariable("id") Integer id) {
 		employeeService.deleteEmployeeById(id);
@@ -38,8 +45,14 @@ public class EmployeeController {
 	}
 
 	@GetMapping(path = { "/{id}" })
-	public Employee getEmployeeById(@PathVariable("id") Long id) {
-		return employeeService.findEmployeeById(id);
+	public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") Long id) {
+		Employee emp = new Employee();
+		try {
+			emp = employeeService.findEmployeeById(id);
+		} catch (Exception e) {
+			System.out.println("Employee is not existing");
+		}
+		return new ResponseEntity<>(emp, HttpStatus.OK);
 	}
 
 	@PostMapping

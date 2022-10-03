@@ -31,7 +31,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Employee findEmployeeById(long id) {
-		return employeeRepository.getOne(id);
+		Employee emp = new Employee();
+		try {
+			emp = employeeRepository.getOne(id);
+		} catch (Exception e) {
+			System.out.println("Employee is not existing");
+		}
+		return emp;
 	}
 
 	@Override
@@ -52,6 +58,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public void deleteAllEmployees() {
 		employeeRepository.deleteAll();
+
+	}
+
+	@Override
+	public List<Employee> findByPlaceContaining(String name) {
+		return employeeRepository.findByPlaceContaining(name);
 
 	}
 

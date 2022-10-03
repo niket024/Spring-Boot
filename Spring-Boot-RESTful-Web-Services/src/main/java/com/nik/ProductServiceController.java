@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nik.Product;
-
 @RestController
 public class ProductServiceController {
 	private static Map<String, Product> productRepo = new HashMap<>();

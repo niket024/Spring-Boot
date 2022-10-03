@@ -9,10 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @Entity
 @Table(name = "Employee")
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id

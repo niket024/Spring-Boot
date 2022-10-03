@@ -1,10 +1,11 @@
 com\nik\HibernateConfiguration.class
-com\nik\SpringBootWebApplication.class
-com\nik\UserDao.class
-com\nik\UserDaoImp.class
 com\nik\UserService.class
-com\nik\User.class
-com\nik\UserServiceImp.class
 com\nik\config\Swagger2UiConfiguration.class
 com\nik\config\WebMvcConfig.class
 com\nik\UserController.class
+com\nik\SpringBootWebApplication.class
+com\nik\ErrorModel.class
+com\nik\UserDao.class
+com\nik\UserDaoImp.class
+com\nik\User.class
+com\nik\UserServiceImp.class

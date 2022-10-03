@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.nik.error.ErrorModel;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.SwaggerDefinition;

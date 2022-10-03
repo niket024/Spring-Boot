@@ -21,10 +21,7 @@ public class AsyncService {
 	@Autowired
 	private RestTemplate restTemplate;
 
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
+	
 
 	@Async("asyncExecutor")
 	public CompletableFuture<EmployeeNames> getEmployeeName() throws InterruptedException 

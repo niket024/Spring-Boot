@@ -22,4 +22,6 @@ public interface EmployeeService {
 
 	public void deleteAllEmployees();
 
+	public List<Employee> findByPlaceContaining(String name);
+
 }
